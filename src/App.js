@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
 
@@ -7,7 +8,17 @@ function Headers() {
 }
 
 function App() {
-  return <Headers />;
+  const [count, setCount] = useState(0);
+  return(
+  <>
+  <h1>Current number: {count}</h1>;
+  <button onClick={() => setCount(count + 1)}>Increment</button>;
+  <button onClick={() => setCount(count - 1)}>Decrement</button>;
+  </>
+  );
+
+
+   
 }
 
 export default App;
