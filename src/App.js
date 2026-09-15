@@ -1,22 +1,33 @@
-import Contact from './Contact';
-import Homepage from './Homepage';
+// import Contact from './Contact';
+/* import Homepage from './Homepage';
 import AboutLittleLemon from './AboutLittleLemon';
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom"; */
 import './App.css';
+import { useState } from 'react';
+
+import LoginButton from './LoginButton';
+import LogoutButton from './LogoutButton';
+import HomePage from './Homepage1';
+
 
 function App() {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const login = () => setIsLoggedIn(true);
+  const logout = () => setIsLoggedIn(false);
+
   return (
     <div>
-      <nav>
-        <Link to="/" className='nav-itme'>Homepage</Link>
-        <Link to="/about" className='nav-itme'>About Little Lemon</Link>
-        <Link to="/contact" className='nav-itme'>Contact</Link>
-      </nav>
-      <Routes>
-        <Route path="/" element={<Homepage />}></Route>
-        <Route path="/about" element={<AboutLittleLemon />}></Route>
-        <Route path="/contact" element={<Contact />}></Route>
-      </Routes>
+      {
+        isLoggedIn ? (
+          <div>
+            <HomePage />
+            <LogoutButton logout={logout} />
+          </div>
+        ) : (
+          <LoginButton login={login} />
+        )
+      }
     </div>
   );
 
