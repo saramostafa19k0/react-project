@@ -5,6 +5,25 @@ body{
 .App {
   text-align: center;
 }
+* {
+    font-family: sans-serif;
+}
+nav {
+    background: #ee9972;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav a {
+    color: #edefee;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+
+
 
 .App-logo {
   height: 40vmin;

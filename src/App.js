@@ -1,22 +1,24 @@
-import logo from './logo.svg';
-import { useState } from 'react';
+import Contact from './Contact';
+import Homepage from './Homepage';
+import AboutLittleLemon from './AboutLittleLemon';
+import { Routes, Route, Link } from "react-router-dom";
 import './App.css';
 
-
-function Headers() {
-  return <h1>sara</h1>;
-}
-
 function App() {
-  const [count, setCount] = useState(0);
-  return(
-  <>
-  <h1>Current number: {count}</h1>;
-  <button onClick={() => setCount(count + 1)}>Increment</button>;
-  <button onClick={() => setCount(count - 1)}>Decrement</button>;
-  </>
+  return (
+    <div>
+      <nav>
+        <Link to="/" className='nav-itme'>Homepage</Link>
+        <Link to="/about" className='nav-itme'>About Little Lemon</Link>
+        <Link to="/contact" className='nav-itme'>Contact</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Homepage />}></Route>
+        <Route path="/about" element={<AboutLittleLemon />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
+      </Routes>
+    </div>
   );
-
 
    
 }
