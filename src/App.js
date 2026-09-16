@@ -2,22 +2,25 @@
 /* import Homepage from './Homepage';
 import AboutLittleLemon from './AboutLittleLemon';
 import { Routes, Route, Link } from "react-router-dom"; */
-import './App.css';
-import { useState } from 'react';
 
-import LoginButton from './LoginButton';
+import logo from './assets/logo copy.svg';
+
+import './App.css';
+/*import { useState } from 'react';
+
+ import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
 import HomePage from './Homepage1';
-
+ */
 
 function App() {
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+/*   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const login = () => setIsLoggedIn(true);
-  const logout = () => setIsLoggedIn(false);
+  const logout = () => setIsLoggedIn(false); */
 
   return (
-    <div>
+ /*    <div>
       {
         isLoggedIn ? (
           <div>
@@ -28,7 +31,8 @@ function App() {
           <LoginButton login={login} />
         )
       }
-    </div>
+    </div> */
+    <img src={logo} className="App-logo" alt="logo" />
   );
 
    
